@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Connect — Wanderlust</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <nav class="navbar container" role="navigation" aria-label="Main navigation">
+      <div class="nav-brand">
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=40&h=40&fit=crop&crop=center" alt="Wanderlust Logo" class="logo">
+        <span class="brand-name">Wanderlust</span>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="index.html#destinations" class="nav-link">Destinations</a></li>
+        <li class="nav-item"><a href="index.html#hotels" class="nav-link">Hotels</a></li>
+        <li class="nav-item"><a href="index.html#tours" class="nav-link">Tours</a></li>
+        <li class="nav-item"><a href="index.html#blog" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="user-btn glass-btn" aria-label="User account"><i class="fas fa-user"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <main style="padding-top:100px">
+    <!-- Hero for Connect page -->
+    <section class="hero" style="min-height:60vh;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)">
+      <div class="hero-content container" style="text-align:center">
+        <h1 style="color:white;font-size:2.2rem;margin:0">Connect with Fellow Travelers</h1>
+        <p class="hero-tagline" style="font-size:1.1rem">Find your perfect travel companions based on destination, language, and shared interests.</p>
+      </div>
+    </section>
+
+    <!-- Find Your Group Form -->
+    <section class="container" style="padding:40px 20px">
+      <div style="max-width:800px;margin:0 auto">
+        <h2 class="section-title">Find Your Travel Group</h2>
+        <p class="section-subtitle">Tell us about your trip and we'll match you with like-minded travelers.</p>
+        
+        <form class="glass-card" style="padding:24px;margin-top:20px" id="connect-form">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+            
+            <!-- Destination Selection -->
+            <div>
+              <label for="destination" style="display:block;font-weight:500;margin-bottom:6px">Travel Destination</label>
+              <select id="destination" required style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);background:white">
+                <option value="">Select destination</option>
+                <option value="santorini">Santorini, Greece</option>
+                <option value="bali">Bali, Indonesia</option>
+                <option value="paris">Paris, France</option>
+                <option value="tokyo">Tokyo, Japan</option>
+                <option value="other">Other destination</option>
+              </select>
+            </div>
+
+            <!-- Travel Dates -->
+            <div>
+              <label for="travel-date" style="display:block;font-weight:500;margin-bottom:6px">Travel Date</label>
+              <input id="travel-date" type="date" required style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06)">
+            </div>
+
+            <!-- Language Preference -->
+            <div>
+              <label for="language" style="display:block;font-weight:500;margin-bottom:6px">Preferred Language</label>
+              <select id="language" required style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);background:white">
+                <option value="">Select language</option>
+                <option value="hindi">Hindi</option>
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <option value="german">German</option>
+                <option value="japanese">Japanese</option>
+                <option value="mandarin">Mandarin</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Interest/Domain -->
+            <div>
+              <label for="domain" style="display:block;font-weight:500;margin-bottom:6px">Interest/Domain</label>
+              <select id="domain" required style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);background:white">
+                <option value="">Select your field</option>
+                <option value="computer-science">Computer Science & Tech</option>
+                <option value="business">Business & Finance</option>
+                <option value="medicine">Medicine & Healthcare</option>
+                <option value="engineering">Engineering</option>
+                <option value="arts-design">Arts & Design</option>
+                <option value="education">Education</option>
+                <option value="photography">Photography</option>
+                <option value="food-culinary">Food & Culinary</option>
+                <option value="adventure-sports">Adventure Sports</option>
+                <option value="history-culture">History & Culture</option>
+                <option value="nature-wildlife">Nature & Wildlife</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Age Range -->
+            <div>
+              <label for="age-range" style="display:block;font-weight:500;margin-bottom:6px">Age Range</label>
+              <select id="age-range" required style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);background:white">
+                <option value="">Select age range</option>
+                <option value="18-25">18-25 years</option>
+                <option value="26-35">26-35 years</option>
+                <option value="36-45">36-45 years</option>
+                <option value="46-55">46-55 years</option>
+                <option value="55+">55+ years</option>
+              </select>
+            </div>
+
+            <!-- Group Size Preference -->
+            <div>
+              <label for="group-size" style="display:block;font-weight:500;margin-bottom:6px">Group Size Preference</label>
+              <select id="group-size" style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);background:white">
+                <option value="">Any size</option>
+                <option value="2-4">Small (2-4 people)</option>
+                <option value="5-8">Medium (5-8 people)</option>
+                <option value="9+">Large (9+ people)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Additional Preferences -->
+          <div style="margin-top:16px">
+            <label for="interests" style="display:block;font-weight:500;margin-bottom:6px">Additional Interests (optional)</label>
+            <textarea id="interests" placeholder="Tell us about your travel style, specific interests, or what you hope to experience..." style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);height:80px;resize:vertical"></textarea>
+          </div>
+
+          <button type="submit" class="cta-btn" style="width:100%;margin-top:20px">Find My Travel Group</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Sample Groups (Mock Results) -->
+    <section class="container" style="padding:20px 20px 40px" id="results-section" style="display:none">
+      <h2 class="section-title">Suggested Travel Groups</h2>
+      <p class="section-subtitle">Based on your preferences, here are some groups you might connect with:</p>
+      
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-top:20px" id="groups-container">
+        <!-- Sample groups will be inserted here by JavaScript -->
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="container" style="padding:20px 20px 40px">
+      <h2 class="section-title">How It Works</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:20px">
+        
+        <div class="glass-card" style="padding:20px;text-align:center">
+          <div style="background:linear-gradient(135deg,#667eea,#764ba2);color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px">
+            <i class="fas fa-search" style="font-size:1.4rem"></i>
+          </div>
+          <h4 style="margin:0 0 8px">1. Share Your Plans</h4>
+          <p class="section-subtitle">Tell us where you're going, when, and what interests you.</p>
+        </div>
+
+        <div class="glass-card" style="padding:20px;text-align:center">
+          <div style="background:linear-gradient(135deg,#667eea,#764ba2);color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px">
+            <i class="fas fa-users" style="font-size:1.4rem"></i>
+          </div>
+          <h4 style="margin:0 0 8px">2. Get Matched</h4>
+          <p class="section-subtitle">Our algorithm finds compatible travelers with similar preferences.</p>
+        </div>
+
+        <div class="glass-card" style="padding:20px;text-align:center">
+          <div style="background:linear-gradient(135deg,#667eea,#764ba2);color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px">
+            <i class="fas fa-comments" style="font-size:1.4rem"></i>
+          </div>
+          <h4 style="margin:0 0 8px">3. Connect & Plan</h4>
+          <p class="section-subtitle">Chat with your matches and plan amazing experiences together.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="container footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2024 Wanderlust. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Connect page specific functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const connectForm = document.getElementById('connect-form');
+      const resultsSection = document.getElementById('results-section');
+      const groupsContainer = document.getElementById('groups-container');
+
+      // Sample group data for demo
+      const sampleGroups = [
+        {
+          name: "Tech Explorers Bali",
+          destination: "bali",
+          language: "hindi", 
+          domain: "computer-science",
+          members: 4,
+          description: "CS professionals exploring Bali's tech scene and beautiful temples.",
+          ages: "26-35"
+        },
+        {
+          name: "Tokyo Techies",
+          destination: "tokyo", 
+          language: "english",
+          domain: "computer-science",
+          members: 6,
+          description: "Software engineers visiting Tokyo's innovation districts and traditional sites.",
+          ages: "25-35"
+        },
+        {
+          name: "Paris Photography Group",
+          destination: "paris",
+          language: "english", 
+          domain: "photography",
+          members: 3,
+          description: "Photography enthusiasts capturing Paris's iconic architecture and hidden gems.",
+          ages: "28-45"
+        },
+        {
+          name: "Santorini Sunset Squad",
+          destination: "santorini",
+          language: "hindi",
+          domain: "arts-design", 
+          members: 5,
+          description: "Creative professionals seeking inspiration in Santorini's stunning landscapes.",
+          ages: "24-40"
+        }
+      ];
+
+      connectForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const formData = {
+          destination: document.getElementById('destination').value,
+          language: document.getElementById('language').value,
+          domain: document.getElementById('domain').value,
+          ageRange: document.getElementById('age-range').value
+        };
+
+        // Filter sample groups based on preferences (simple matching)
+        let matchedGroups = sampleGroups.filter(group => {
+          let score = 0;
+          if (group.destination === formData.destination) score += 2;
+          if (group.language === formData.language) score += 2;
+          if (group.domain === formData.domain) score += 2;
+          return score >= 2; // Show groups with at least 2 matching criteria
+        });
+
+        // If no exact matches, show some random groups
+        if (matchedGroups.length === 0) {
+          matchedGroups = sampleGroups.slice(0, 2);
+        }
+
+        // Display results
+        displayResults(matchedGroups);
+        
+        // Scroll to results
+        resultsSection.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      function displayResults(groups) {
+        resultsSection.style.display = 'block';
+        
+        groupsContainer.innerHTML = groups.map(group => `
+          <div class="glass-card" style="padding:20px">
+            <h4 style="margin:0 0 8px;color:#333">${group.name}</h4>
+            <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+              <span style="background:rgba(102,126,234,0.1);color:#667eea;padding:4px 8px;border-radius:6px;font-size:0.8rem">${group.members} members</span>
+              <span style="background:rgba(102,126,234,0.1);color:#667eea;padding:4px 8px;border-radius:6px;font-size:0.8rem">${group.ages}</span>
+            </div>
+            <p class="section-subtitle" style="margin-bottom:12px">${group.description}</p>
+            <button class="card-btn" onclick="alert('Connect feature coming soon! You would be able to join ${group.name}.')">Join Group</button>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>
