@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust - Explore the World</title>
+    <!-- Local stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Inter font (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header (frosted glass) -->
+    <header class="header" id="header">
+        <nav class="navbar container" role="navigation" aria-label="Main navigation">
+            <div class="nav-brand">
+                <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=40&h=40&fit=crop&crop=center" alt="Wanderlust Logo" class="logo">
+                <span class="brand-name">Wanderlust</span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#destinations" class="nav-link">Destinations</a></li>
+                <li class="nav-item"><a href="#hotels" class="nav-link">Hotels</a></li>
+                <li class="nav-item"><a href="#tours" class="nav-link">Tours</a></li>
+                <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <!-- User / booking button -->
+                <button class="user-btn glass-btn" aria-label="User account"><i class="fas fa-user"></i></button>
+                <!-- Hamburger for mobile -->
+                <button class="hamburger" id="hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <!-- Video will autoplay muted and loop; script provides fallback if blocked or slow -->
+            <video autoplay muted loop playsinline class="hero-video" id="hero-video">
+                <source src="https://player.vimeo.com/external/370467553.sd.mp4?s=e90dcaba73c19e0e36f03406b47bbd6992dd6c1c&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
+                <!-- If video can't play, the poster image below acts as fallback -->
+            </video>
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop" alt="Beautiful landscape" class="hero-image" id="hero-image" aria-hidden="true">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content container">
+            <div class="search-container glass-effect" role="search">
+                <form class="search-form" id="search-form">
+                    <label for="search-input" class="sr-only">Where do you want to go?</label>
+                    <div class="search-input-group">
+                        <i class="fas fa-map-marker-alt search-icon" aria-hidden="true"></i>
+                        <input type="text" id="search-input" name="query" placeholder="Where do you want to go?" class="search-input" autocomplete="off" aria-label="Search destination">
+                        <button type="submit" class="search-btn" aria-label="Search">Search</button>
+                    </div>
+                </form>
+            </div>
+            <p class="hero-tagline">Explore the World, Uncover Your Story</p>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section class="destinations" id="destinations">
+        <div class="container">
+            <h2 class="section-title">Featured Destinations</h2>
+            <p class="section-subtitle">Discover breathtaking places around the globe</p>
+            
+            <div class="destinations-grid">
+                <article class="destination-card glass-card" data-src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&h=800&fit=crop" aria-labelledby="santorini-title">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&h=300&fit=crop" alt="Santorini, Greece">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 id="santorini-title" class="card-title">Santorini, Greece</h3>
+                        <p class="card-description">Experience the magic of white-washed buildings and stunning sunsets over the Aegean Sea.</p>
+                        <button class="card-btn">Discover More</button>
+                    </div>
+                </article>
+
+                <article class="destination-card glass-card" data-src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=1200&h=800&fit=crop" aria-labelledby="bali-title">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=400&h=300&fit=crop" alt="Bali, Indonesia">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 id="bali-title" class="card-title">Bali, Indonesia</h3>
+                        <p class="card-description">Immerse yourself in tropical paradise with pristine beaches and ancient temples.</p>
+                        <button class="card-btn">Discover More</button>
+                    </div>
+                </article>
+
+                <article class="destination-card glass-card" data-src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200&h=800&fit=crop" aria-labelledby="paris-title">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&h=300&fit=crop" alt="Paris, France">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 id="paris-title" class="card-title">Paris, France</h3>
+                        <p class="card-description">Fall in love with the City of Light and its timeless romance and elegance.</p>
+                        <button class="card-btn">Discover More</button>
+                    </div>
+                </article>
+
+                <article class="destination-card glass-card" data-src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1200&h=800&fit=crop" aria-labelledby="tokyo-title">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&h=300&fit=crop" alt="Tokyo, Japan">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 id="tokyo-title" class="card-title">Tokyo, Japan</h3>
+                        <p class="card-description">Discover the perfect blend of ancient traditions and cutting-edge modernity.</p>
+                        <button class="card-btn">Discover More</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Choose Wanderlust</h2>
+            <p class="section-subtitle">Your journey matters to us</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card glass-card">
+                    <div class="benefit-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3 class="benefit-title">Expert Guides</h3>
+                    <p class="benefit-description">Our certified local guides bring destinations to life with insider knowledge and authentic experiences.</p>
+                </div>
+
+                <div class="benefit-card glass-card">
+                    <div class="benefit-icon"><i class="fas fa-clock"></i></div>
+                    <h3 class="benefit-title">24/7 Support</h3>
+                    <p class="benefit-description">Round-the-clock assistance ensures your peace of mind throughout your entire journey.</p>
+                </div>
+
+                <div class="benefit-card glass-card">
+                    <div class="benefit-icon"><i class="fas fa-tag"></i></div>
+                    <h3 class="benefit-title">Best Prices</h3>
+                    <p class="benefit-description">We guarantee competitive pricing with exclusive deals and transparent, no-hidden-fee policies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="cta-background">
+            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&h=600&fit=crop" alt="Adventure awaits">
+            <div class="cta-overlay"></div>
+        </div>
+        <div class="cta-content container">
+            <h2 class="cta-title">Ready for Your Next Adventure?</h2>
+            <p class="cta-subtitle">Let us help you create memories that will last a lifetime</p>
+            <button class="cta-btn">Plan Your Trip</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=40&h=40&fit=crop&crop=center" alt="Wanderlust Logo" class="footer-logo">
+                        <span class="footer-brand-name">Wanderlust</span>
+                    </div>
+                    <p class="footer-description">Explore the world with confidence and create unforgettable memories.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@wanderlust.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Travel St, Adventure City</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wanderlust. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Local script -->
+    <script src="script.js"></script>
+</body>
+</html>
