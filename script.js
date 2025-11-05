@@ -92,9 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Simple form validation
-  searchForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+  // Search on Enter key press and form submission
+  function handleSearch() {
     const val = searchInput.value.trim();
     if (!val) {
       // simple shake animation via class
@@ -105,6 +104,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     // In real app, you'd submit or navigate to results
     alert('Searching for: ' + val);
+  }
+
+  // Handle form submission (Enter key)
+  searchForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    handleSearch();
+  });
+
+  // Also handle Enter key press directly on input
+  searchInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSearch();
+    }
   });
 
   // IntersectionObserver for fade-in on scroll

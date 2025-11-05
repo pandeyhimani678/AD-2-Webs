@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Suggested Groups — Wanderlust Connect</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <nav class="navbar container" role="navigation" aria-label="Main navigation">
+      <div class="nav-brand">
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=40&h=40&fit=crop&crop=center" alt="Wanderlust Logo" class="logo">
+        <span class="brand-name">Wanderlust</span>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="index.html#destinations" class="nav-link">Destinations</a></li>
+        <li class="nav-item"><a href="connect.html" class="nav-link">Connect</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="user-btn glass-btn" aria-label="User account"><i class="fas fa-user"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <main style="padding-top:100px">
+    <!-- Hero Section -->
+    <section class="container" style="padding:40px 20px;text-align:center">
+      <div style="max-width:600px;margin:0 auto">
+        <h1 style="color:#333;font-size:2.2rem;margin:0 0 12px">Your Perfect Travel Matches</h1>
+        <p class="section-subtitle">We found these amazing groups that match your preferences!</p>
+        <div class="glass-card" style="padding:14px;margin:20px 0;display:inline-flex;align-items:center;gap:8px">
+          <i class="fas fa-check-circle" style="color:#28a745"></i>
+          <span id="match-summary">Found 6 groups matching your criteria</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Options -->
+    <section class="container" style="padding:0 20px 20px">
+      <div style="max-width:800px;margin:0 auto">
+        <div class="glass-card" style="padding:16px">
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <span style="font-weight:500">Filter by:</span>
+            <button class="filter-btn active" data-filter="all">All Groups</button>
+            <button class="filter-btn" data-filter="perfect">Perfect Match</button>
+            <button class="filter-btn" data-filter="good">Good Match</button>
+            <button class="filter-btn" data-filter="nearby">Nearby Groups</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Suggested Groups -->
+    <section class="container" style="padding:0 20px 40px">
+      <div style="max-width:1000px;margin:0 auto">
+        <div id="groups-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:24px">
+          
+          <!-- Perfect Match Group 1 -->
+          <div class="group-card glass-card perfect-match" data-category="perfect">
+            <div class="match-badge perfect">Perfect Match</div>
+            <div class="group-header">
+              <div class="group-avatar">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face" alt="Group leader">
+                <div class="group-size">8</div>
+              </div>
+              <div class="group-info">
+                <h3>Tech Explorers Bali</h3>
+                <div class="group-tags">
+                  <span class="tag destination">Bali, Indonesia</span>
+                  <span class="tag language">Hindi</span>
+                  <span class="tag domain">Computer Science</span>
+                </div>
+              </div>
+            </div>
+            <p class="group-description">Software developers and tech enthusiasts exploring Bali's startup scene, co-working spaces, and beautiful temples. Planning visits to Hubud, Dojo Bali, and traditional villages.</p>
+            <div class="group-details">
+              <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>Dec 15-22, 2024</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-users"></i>
+                <span>Ages 25-35</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Canggu & Ubud</span>
+              </div>
+            </div>
+            <div class="group-members">
+              <div class="member-avatars">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <span class="member-count">+5</span>
+              </div>
+              <div class="member-info">Rahul, Priya, Amit and 5 others</div>
+            </div>
+            <div class="group-actions">
+              <button class="join-btn primary">Join Group</button>
+              <button class="view-btn">View Details</button>
+            </div>
+          </div>
+
+          <!-- Perfect Match Group 2 -->
+          <div class="group-card glass-card perfect-match" data-category="perfect">
+            <div class="match-badge perfect">Perfect Match</div>
+            <div class="group-header">
+              <div class="group-avatar">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face" alt="Group leader">
+                <div class="group-size">6</div>
+              </div>
+              <div class="group-info">
+                <h3>Bali Digital Nomads</h3>
+                <div class="group-tags">
+                  <span class="tag destination">Bali, Indonesia</span>
+                  <span class="tag language">English/Hindi</span>
+                  <span class="tag domain">Tech & Startups</span>
+                </div>
+              </div>
+            </div>
+            <p class="group-description">Remote workers and entrepreneurs combining work and travel. Planning co-working sessions, networking events, and weekend temple tours. Hindi/English speaking group.</p>
+            <div class="group-details">
+              <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>Dec 10-20, 2024</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-users"></i>
+                <span>Ages 28-38</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-wifi"></i>
+                <span>Co-working Focus</span>
+              </div>
+            </div>
+            <div class="group-members">
+              <div class="member-avatars">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <span class="member-count">+3</span>
+              </div>
+              <div class="member-info">Sneha, Arjun, Kavya and 3 others</div>
+            </div>
+            <div class="group-actions">
+              <button class="join-btn primary">Join Group</button>
+              <button class="view-btn">View Details</button>
+            </div>
+          </div>
+
+          <!-- Good Match Group 1 -->
+          <div class="group-card glass-card good-match" data-category="good">
+            <div class="match-badge good">Good Match</div>
+            <div class="group-header">
+              <div class="group-avatar">
+                <img src="https://images.unsplash.com/photo-1539571696767-8de394019ad5?w=50&h=50&fit=crop&crop=face" alt="Group leader">
+                <div class="group-size">12</div>
+              </div>
+              <div class="group-info">
+                <h3>Bali Adventure Squad</h3>
+                <div class="group-tags">
+                  <span class="tag destination">Bali, Indonesia</span>
+                  <span class="tag language">English</span>
+                  <span class="tag domain">Adventure Sports</span>
+                </div>
+              </div>
+            </div>
+            <p class="group-description">Adrenaline junkies planning volcano hikes, surfing lessons, white water rafting, and scuba diving around Bali's best spots.</p>
+            <div class="group-details">
+              <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>Dec 12-25, 2024</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-users"></i>
+                <span>Ages 22-40</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-mountain"></i>
+                <span>Adventure Focus</span>
+              </div>
+            </div>
+            <div class="group-members">
+              <div class="member-avatars">
+                <img src="https://images.unsplash.com/photo-1539571696767-8de394019ad5?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <span class="member-count">+9</span>
+              </div>
+              <div class="member-info">Alex, Sarah, Mike and 9 others</div>
+            </div>
+            <div class="group-actions">
+              <button class="join-btn secondary">Request to Join</button>
+              <button class="view-btn">View Details</button>
+            </div>
+          </div>
+
+          <!-- Good Match Group 2 -->
+          <div class="group-card glass-card good-match" data-category="good">
+            <div class="match-badge good">Good Match</div>
+            <div class="group-header">
+              <div class="group-avatar">
+                <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=50&h=50&fit=crop&crop=face" alt="Group leader">
+                <div class="group-size">7</div>
+              </div>
+              <div class="group-info">
+                <h3>Bali Wellness Retreat</h3>
+                <div class="group-tags">
+                  <span class="tag destination">Bali, Indonesia</span>
+                  <span class="tag language">Hindi/English</span>
+                  <span class="tag domain">Health & Wellness</span>
+                </div>
+              </div>
+            </div>
+            <p class="group-description">Yoga enthusiasts and wellness seekers exploring Bali's spiritual side. Daily yoga sessions, meditation workshops, and healthy Balinese cuisine experiences.</p>
+            <div class="group-details">
+              <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>Dec 8-18, 2024</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-users"></i>
+                <span>Ages 25-45</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-leaf"></i>
+                <span>Wellness Focus</span>
+              </div>
+            </div>
+            <div class="group-members">
+              <div class="member-avatars">
+                <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <span class="member-count">+4</span>
+              </div>
+              <div class="member-info">Isha, Maya, Rohan and 4 others</div>
+            </div>
+            <div class="group-actions">
+              <button class="join-btn secondary">Request to Join</button>
+              <button class="view-btn">View Details</button>
+            </div>
+          </div>
+
+          <!-- Nearby Group 1 -->
+          <div class="group-card glass-card nearby-match" data-category="nearby">
+            <div class="match-badge nearby">Similar Destination</div>
+            <div class="group-header">
+              <div class="group-avatar">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face" alt="Group leader">
+                <div class="group-size">9</div>
+              </div>
+              <div class="group-info">
+                <h3>Thailand Tech Travelers</h3>
+                <div class="group-tags">
+                  <span class="tag destination">Bangkok, Thailand</span>
+                  <span class="tag language">Hindi</span>
+                  <span class="tag domain">Computer Science</span>
+                </div>
+              </div>
+            </div>
+            <p class="group-description">Software engineers exploring Southeast Asia's tech hubs. While in Thailand, they're also planning a side trip to Bali. Similar interests and language preference.</p>
+            <div class="group-details">
+              <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>Dec 5-20, 2024</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-users"></i>
+                <span>Ages 24-34</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-plane"></i>
+                <span>Multi-destination</span>
+              </div>
+            </div>
+            <div class="group-members">
+              <div class="member-avatars">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <span class="member-count">+6</span>
+              </div>
+              <div class="member-info">Vikram, Nisha, Dev and 6 others</div>
+            </div>
+            <div class="group-actions">
+              <button class="join-btn secondary">Contact Group</button>
+              <button class="view-btn">View Details</button>
+            </div>
+          </div>
+
+          <!-- Nearby Group 2 -->
+          <div class="group-card glass-card nearby-match" data-category="nearby">
+            <div class="match-badge nearby">Similar Interest</div>
+            <div class="group-header">
+              <div class="group-avatar">
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=50&h=50&fit=crop&crop=face" alt="Group leader">
+                <div class="group-size">5</div>
+              </div>
+              <div class="group-info">
+                <h3>Java Developers Jakarta</h3>
+                <div class="group-tags">
+                  <span class="tag destination">Jakarta, Indonesia</span>
+                  <span class="tag language">English</span>
+                  <span class="tag domain">Computer Science</span>
+                </div>
+              </div>
+            </div>
+            <p class="group-description">Java developers meeting up in Jakarta. They're planning weekend trips to Bali and could coordinate travel together from the same region.</p>
+            <div class="group-details">
+              <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>Dec 10-24, 2024</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-users"></i>
+                <span>Ages 26-36</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-code"></i>
+                <span>Developer Meetups</span>
+              </div>
+            </div>
+            <div class="group-members">
+              <div class="member-avatars">
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=30&h=30&fit=crop&crop=face" alt="Member">
+                <span class="member-count">+2</span>
+              </div>
+              <div class="member-info">Lisa, Ahmad, Chen and 2 others</div>
+            </div>
+            <div class="group-actions">
+              <button class="join-btn secondary">Contact Group</button>
+              <button class="view-btn">View Details</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Create Your Own Group -->
+    <section class="container" style="padding:20px 20px 40px">
+      <div style="max-width:600px;margin:0 auto;text-align:center">
+        <div class="glass-card" style="padding:24px">
+          <h3 style="margin:0 0 8px">Don't see the perfect group?</h3>
+          <p class="section-subtitle">Start your own travel group and let others find you!</p>
+          <button class="cta-btn" style="margin-top:12px">Create Your Group</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="container footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2024 Wanderlust. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <style>
+    /* Suggested Groups Page Styles */
+    .group-card {
+      position: relative;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .group-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .match-badge {
+      position: absolute;
+      top: -8px;
+      right: 16px;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .match-badge.perfect {
+      background: linear-gradient(135deg, #28a745, #20c997);
+    }
+
+    .match-badge.good {
+      background: linear-gradient(135deg, #ffc107, #fd7e14);
+    }
+
+    .match-badge.nearby {
+      background: linear-gradient(135deg, #6f42c1, #e83e8c);
+    }
+
+    .group-header {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .group-avatar {
+      position: relative;
+    }
+
+    .group-avatar img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .group-size {
+      position: absolute;
+      bottom: -4px;
+      right: -4px;
+      background: #007bff;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .group-info h3 {
+      margin: 0 0 6px;
+      font-size: 1.1rem;
+    }
+
+    .group-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: rgba(0, 123, 255, 0.1);
+      color: #007bff;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+    }
+
+    .tag.destination {
+      background: rgba(40, 167, 69, 0.1);
+      color: #28a745;
+    }
+
+    .tag.language {
+      background: rgba(255, 193, 7, 0.1);
+      color: #ffc107;
+    }
+
+    .tag.domain {
+      background: rgba(111, 66, 193, 0.1);
+      color: #6f42c1;
+    }
+
+    .group-description {
+      margin: 12px 0;
+      line-height: 1.5;
+      color: #666;
+    }
+
+    .group-details {
+      display: flex;
+      gap: 16px;
+      margin: 12px 0;
+      flex-wrap: wrap;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .group-members {
+      margin: 16px 0;
+    }
+
+    .member-avatars {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .member-avatars img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .member-count {
+      background: #ddd;
+      color: #666;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 10px;
+    }
+
+    .member-info {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .group-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .join-btn {
+      flex: 1;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .join-btn.primary {
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      color: white;
+    }
+
+    .join-btn.secondary {
+      background: rgba(0, 123, 255, 0.1);
+      color: #007bff;
+      border: 1px solid rgba(0, 123, 255, 0.2);
+    }
+
+    .view-btn {
+      padding: 8px 16px;
+      background: transparent;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .view-btn:hover {
+      background: #f8f9fa;
+    }
+
+    .filter-btn {
+      padding: 6px 12px;
+      border: 1px solid rgba(0, 123, 255, 0.2);
+      background: transparent;
+      color: #007bff;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #007bff;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      #groups-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .group-details {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .group-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get URL parameters to show relevant groups
+      const urlParams = new URLSearchParams(window.location.search);
+      const destination = urlParams.get('destination');
+      const language = urlParams.get('language');
+      const domain = urlParams.get('domain');
+
+      // Update match summary based on parameters
+      if (destination || language || domain) {
+        const summary = document.getElementById('match-summary');
+        let matchText = 'Found groups matching ';
+        const criteria = [];
+        if (destination) criteria.push(destination);
+        if (language) criteria.push(language + ' speakers');
+        if (domain) criteria.push(domain.replace('-', ' '));
+        summary.textContent = `Found 6 groups matching ${criteria.join(', ')}`;
+      }
+
+      // Filter functionality
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const groupCards = document.querySelectorAll('.group-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Update active state
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.dataset.filter;
+
+          // Show/hide cards based on filter
+          groupCards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Join button actions
+      document.querySelectorAll('.join-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const groupName = this.closest('.group-card').querySelector('h3').textContent;
+          alert(`Great! You've requested to join "${groupName}". The group organizer will be notified and will contact you soon.`);
+        });
+      });
+
+      // View details actions
+      document.querySelectorAll('.view-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const groupName = this.closest('.group-card').querySelector('h3').textContent;
+          alert(`Detailed information for "${groupName}" would be shown here (feature coming soon!).`);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
