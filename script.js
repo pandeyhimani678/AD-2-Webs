@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const hero = document.getElementById('hero');
   const heroVideo = document.getElementById('hero-video');
   const heroImage = document.getElementById('hero-image');
+  const userBtn = document.querySelector('.user-btn');
+  const loginModal = document.getElementById('login-modal');
 
   // Toggle mobile navigation
   hamburger.addEventListener('click', function () {
@@ -33,6 +35,50 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  // User / profile button opens login modal when present, otherwise navigate to login page
+  if (userBtn) {
+    userBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (loginModal) {
+        loginModal.classList.add('open');
+        loginModal.setAttribute('aria-hidden', 'false');
+        // focus first input
+        const first = loginModal.querySelector('input');
+        if (first) first.focus();
+      } else {
+        // fallback to dedicated login page
+        window.location.href = 'login.html';
+      }
+    });
+  }
+
+  // Modal close behavior (delegated)
+  function closeLoginModal() {
+    if (!loginModal) return;
+    loginModal.classList.remove('open');
+    loginModal.setAttribute('aria-hidden', 'true');
+  }
+  if (loginModal) {
+    // close button
+    const closeBtn = loginModal.querySelector('.login-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeLoginModal);
+    // backdrop click
+    const backdrop = loginModal.querySelector('.login-backdrop');
+    if (backdrop) backdrop.addEventListener('click', closeLoginModal);
+    // ESC key
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape') closeLoginModal();
+    });
+    // submit handler - demo
+    const loginForm = loginModal.querySelector('#login-form');
+    if (loginForm) loginForm.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      // simple demo behavior
+      alert('Signed in (demo)');
+      closeLoginModal();
+    });
+  }
 
   // Header scroll effect: become more opaque after leaving hero
   const heroHeight = hero ? hero.offsetHeight : 500;
@@ -85,6 +131,19 @@ document.addEventListener('DOMContentLoaded', function () {
     // If user prefers reduced motion, don't autoplay video
     const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduce) {
+      heroVideo.style.display = 'none';
+      heroImage.style.display = 'block';
+      return;
+    }
+    // Respect user's Save-Data preference and detect connection speed (when available)
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    const saveData = connection && connection.saveData;
+    const effectiveType = connection && connection.effectiveType; // e.g., '4g', '3g'
+
+    // Only attempt autoplay if connection looks fast and save-data is not enabled
+    const allowVideoAutoplay = !saveData && (!effectiveType || effectiveType === '4g');
+
+    if (!allowVideoAutoplay) {
       heroVideo.style.display = 'none';
       heroImage.style.display = 'block';
       return;

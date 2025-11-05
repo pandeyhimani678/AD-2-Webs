@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — Wanderlust</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <main style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px;background:linear-gradient(180deg,#f7fbff,#f2f6fb)">
+    <div class="glass-card" style="max-width:420px;width:100%;padding:24px">
+      <h2 style="margin:0 0 12px">Sign in to Wanderlust</h2>
+      <p class="section-subtitle">Access your bookings and profile</p>
+      <form onsubmit="event.preventDefault();alert('Logged in (demo)')" style="margin-top:12px;display:flex;flex-direction:column;gap:10px">
+        <input type="email" placeholder="you@domain.com" required style="padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06)">
+        <input type="password" placeholder="Password" required style="padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06)">
+        <button class="cta-btn" type="submit">Sign In</button>
+      </form>
+      <p style="margin-top:12px;color:var(--muted)">Don't have an account? <a href="#">Create one</a></p>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

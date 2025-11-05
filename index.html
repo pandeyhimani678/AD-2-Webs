@@ -10,6 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Preload hero image to improve perceived load speed -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop">
+    <!-- Inline styles for modal and small utility (kept local for quick load) -->
+    <style>
+    /* Login modal styles */
+    .login-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:2000}
+    .login-modal.open{display:flex}
+    .login-backdrop{position:absolute;inset:0;background:rgba(6,10,15,0.45);backdrop-filter:blur(4px)}
+    .login-panel{position:relative;z-index:2;max-width:420px;width:calc(100% - 40px);padding:20px;border-radius:14px}
+    .login-close{position:absolute;right:12px;top:10px;border:0;background:transparent;font-size:1.4rem;cursor:pointer}
+    @media (max-width:600px){.login-panel{padding:16px;border-radius:10px}}
+    </style>
 </head>
 <body>
     <!-- Header (frosted glass) -->
@@ -45,11 +57,11 @@
     <section class="hero" id="hero">
         <div class="hero-background">
             <!-- Video will autoplay muted and loop; script provides fallback if blocked or slow -->
-            <video autoplay muted loop playsinline class="hero-video" id="hero-video">
+            <video autoplay muted loop playsinline class="hero-video" id="hero-video" preload="metadata" poster="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop">
                 <source src="https://player.vimeo.com/external/370467553.sd.mp4?s=e90dcaba73c19e0e36f03406b47bbd6992dd6c1c&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
                 <!-- If video can't play, the poster image below acts as fallback -->
             </video>
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop" alt="Beautiful landscape" class="hero-image" id="hero-image" aria-hidden="true">
+            <img loading="eager" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop" srcset="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=450&fit=crop 800w, https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=675&fit=crop 1200w, https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop 1920w" sizes="(max-width: 800px) 100vw, 1920px" alt="Beautiful landscape" class="hero-image" id="hero-image" aria-hidden="true">
             <div class="hero-overlay"></div>
         </div>
         
@@ -77,7 +89,7 @@
             <div class="destinations-grid">
                 <article class="destination-card glass-card" data-src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&h=800&fit=crop" aria-labelledby="santorini-title">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&h=300&fit=crop" alt="Santorini, Greece">
+                        <img loading="lazy" width="400" height="300" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&h=300&fit=crop" srcset="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&h=300&fit=crop 400w, https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop 800w, https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&h=900&fit=crop 1200w" sizes="(max-width:600px) 100vw, 400px" alt="Santorini, Greece">
                         <div class="card-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -89,7 +101,7 @@
 
                 <article class="destination-card glass-card" data-src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=1200&h=800&fit=crop" aria-labelledby="bali-title">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=400&h=300&fit=crop" alt="Bali, Indonesia">
+                        <img loading="lazy" width="400" height="300" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=400&h=300&fit=crop" srcset="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=400&h=300&fit=crop 400w, https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=800&h=600&fit=crop 800w, https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=1200&h=900&fit=crop 1200w" sizes="(max-width:600px) 100vw, 400px" alt="Bali, Indonesia">
                         <div class="card-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -101,7 +113,7 @@
 
                 <article class="destination-card glass-card" data-src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200&h=800&fit=crop" aria-labelledby="paris-title">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&h=300&fit=crop" alt="Paris, France">
+                        <img loading="lazy" width="400" height="300" src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&h=300&fit=crop" srcset="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&h=300&fit=crop 400w, https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&h=600&fit=crop 800w, https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200&h=900&fit=crop 1200w" sizes="(max-width:600px) 100vw, 400px" alt="Paris, France">
                         <div class="card-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -113,7 +125,7 @@
 
                 <article class="destination-card glass-card" data-src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1200&h=800&fit=crop" aria-labelledby="tokyo-title">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&h=300&fit=crop" alt="Tokyo, Japan">
+                        <img loading="lazy" width="400" height="300" src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&h=300&fit=crop" srcset="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&h=300&fit=crop 400w, https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&h=600&fit=crop 800w, https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1200&h=900&fit=crop 1200w" sizes="(max-width:600px) 100vw, 400px" alt="Tokyo, Japan">
                         <div class="card-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -127,7 +139,7 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="benefits">
+    <section class="benefits" id="tours">
         <div class="container">
             <h2 class="section-title">Why Choose Wanderlust</h2>
             <p class="section-subtitle">Your journey matters to us</p>
@@ -154,6 +166,38 @@
         </div>
     </section>
 
+    <!-- Hotels (placeholder anchor) -->
+    <section id="hotels" class="container" style="padding:28px 20px">
+        <h2 class="section-title">Hotels</h2>
+        <p class="section-subtitle">Hand-picked stays to match every travel style.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:12px">
+            <div class="glass-card" style="padding:14px;min-width:220px;flex:1">
+                <strong>Seaside Boutique</strong>
+                <p class="section-subtitle">A cozy cliffside retreat with panoramic views.</p>
+            </div>
+            <div class="glass-card" style="padding:14px;min-width:220px;flex:1">
+                <strong>City Comfort</strong>
+                <p class="section-subtitle">Modern amenities in the heart of the action.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog (placeholder) -->
+    <section id="blog" class="container" style="padding:28px 20px">
+        <h2 class="section-title">From the Blog</h2>
+        <p class="section-subtitle">Stories and travel tips from our experts.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px">
+            <article class="glass-card" style="padding:14px">
+                <h4>Top 10 Sunset Spots</h4>
+                <p class="section-subtitle">Where to watch the sun paint the sky around the world.</p>
+            </article>
+            <article class="glass-card" style="padding:14px">
+                <h4>Packing Light</h4>
+                <p class="section-subtitle">Smart packing tips to travel effortlessly.</p>
+            </article>
+        </div>
+    </section>
+
     <!-- Call to Action Section -->
     <section class="cta">
         <div class="cta-background">
@@ -168,7 +212,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="contact" class="footer">
         <div class="container footer-inner">
             <div class="footer-content">
                 <div class="footer-section">
@@ -192,9 +236,9 @@
                 <div class="footer-section">
                     <h4 class="footer-title">Contact</h4>
                     <ul class="footer-links">
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> hello@wanderlust.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Travel St, Adventure City</li>
+                        <li><i class="fas fa-phone"></i> +91 9382305978</li>
+                        <li><i class="fas fa-envelope"></i> AD^2@wanderlust.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Central University of Jharkhand,Ranchi,India</li>
                     </ul>
                 </div>
 
@@ -214,6 +258,23 @@
             </div>
         </div>
     </footer>
+
+    <!-- Login modal (opens when profile/user button clicked) -->
+    <div id="login-modal" class="login-modal" aria-hidden="true" role="dialog" aria-labelledby="login-title">
+        <div class="login-backdrop" data-close="true"></div>
+        <div class="login-panel glass-card" role="document">
+            <button class="login-close" aria-label="Close">&times;</button>
+            <h3 id="login-title">Sign in to Wanderlust</h3>
+            <form id="login-form">
+                <label class="sr-only" for="login-email">Email</label>
+                <input id="login-email" type="email" placeholder="you@domain.com" required style="width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)">
+                <label class="sr-only" for="login-password">Password</label>
+                <input id="login-password" type="password" placeholder="Password" required style="width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)">
+                <button type="submit" class="cta-btn" style="width:100%;margin-top:12px">Sign In</button>
+                <p style="margin-top:10px;font-size:0.9rem;color:var(--muted)">Or <a href="login.html">open full login page</a></p>
+            </form>
+        </div>
+    </div>
 
     <!-- Local script -->
     <script src="script.js"></script>
