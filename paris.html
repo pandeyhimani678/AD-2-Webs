@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paris — Wanderlust</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <nav class="navbar container" role="navigation" aria-label="Main navigation">
+      <div class="nav-brand">
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=40&h=40&fit=crop&crop=center" alt="Wanderlust Logo" class="logo">
+        <span class="brand-name">Wanderlust</span>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="index.html#destinations" class="nav-link">Destinations</a></li>
+        <li class="nav-item"><a href="#tours" class="nav-link">Tours</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="user-btn glass-btn" aria-label="User account"><i class="fas fa-user"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-background">
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1920&h=1080&fit=crop" alt="Paris skyline" class="hero-image">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content container">
+        <h1 style="color:white;font-size:2rem;margin:0">Paris, France</h1>
+        <p class="hero-tagline">City of light, romance, and timeless culture.</p>
+      </div>
+    </section>
+
+    <section class="container" style="padding:36px 20px 8px">
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start">
+        <article>
+          <h2 class="section-title">Overview</h2>
+          <p class="section-subtitle">Paris is a cultural and culinary capital with world-class museums and architecture.</p>
+          <p>Stroll along the Seine, visit the Louvre, and savor pastries in cozy cafés. Paris blends historic grandeur with fashionable innovation.</p>
+
+          <h3 style="margin-top:22px">Top Experiences</h3>
+          <ul style="color:var(--muted);">
+            <li>Visit the Eiffel Tower and Trocadéro</li>
+            <li>Explore the Louvre and Musée d'Orsay</li>
+            <li>Wander Montmartre and Sacré-Cœur</li>
+            <li>Enjoy culinary experiences and wine tastings</li>
+          </ul>
+
+          <h3 id="tours" style="margin-top:18px">Curated Tours</h3>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-top:12px">
+            <div class="glass-card" style="padding:14px;">
+              <strong>Louvre Highlights Tour</strong>
+              <p class="section-subtitle" style="margin:6px 0 0">Private guided tour of the museum's masterpieces.</p>
+            </div>
+            <div class="glass-card" style="padding:14px;">
+              <strong>Seine Evening Cruise</strong>
+              <p class="section-subtitle" style="margin:6px 0 0">A romantic, illuminated view of Paris from the river.</p>
+            </div>
+          </div>
+        </article>
+
+        <aside>
+          <div class="glass-card" style="padding:18px;">
+            <h4 style="margin:0 0 8px">Plan Your Trip</h4>
+            <p class="section-subtitle">Quick booking</p>
+            <form onsubmit="event.preventDefault();alert('Booking request sent (demo)')">
+              <label class="sr-only" for="date-paris">Date</label>
+              <input id="date-paris" type="date" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);margin-top:10px">
+              <button class="cta-btn" style="width:100%;margin-top:12px">Request Availability</button>
+            </form>
+          </div>
+
+          <div class="glass-card" style="padding:14px;margin-top:14px;text-align:center">
+            <p style="margin:0">Share</p>
+            <div style="display:flex;gap:8px;justify-content:center;margin-top:8px">
+              <a class="social-link" href="#"><i class="fab fa-facebook-f"></i></a>
+              <a class="social-link" href="#"><i class="fab fa-instagram"></i></a>
+              <a class="social-link" href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container" style="padding:18px 20px 48px">
+      <h2 class="section-title">Gallery</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px">
+        <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=800&h=600&fit=crop" alt="Paris street" style="width:100%;height:180px;object-fit:cover;border-radius:12px">
+        <img src="https://images.unsplash.com/photo-1511732352714-0a6a4c5d36a8?w=800&h=600&fit=crop" alt="Eiffel Tower" style="width:100%;height:180px;object-fit:cover;border-radius:12px">
+        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&h=600&fit=crop" alt="Paris cafe" style="width:100%;height:180px;object-fit:cover;border-radius:12px">
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2024 Wanderlust. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
